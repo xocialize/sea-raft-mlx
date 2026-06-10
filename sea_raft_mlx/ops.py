@@ -79,8 +79,8 @@ def _bilinear_1d(x: mx.array, axis: int, out: int, align_corners: bool) -> mx.ar
 def interpolate_bilinear(x: mx.array, scale_factor: float, align_corners: bool = False) -> mx.array:
     """x: [N, H, W, C]."""
     N, H, W, C = x.shape
-    oh = int(round(H * scale_factor))
-    ow = int(round(W * scale_factor))
+    oh = max(1, int(round(H * scale_factor)))
+    ow = max(1, int(round(W * scale_factor)))
     x = _bilinear_1d(x, 1, oh, align_corners)
     x = _bilinear_1d(x, 2, ow, align_corners)
     return x

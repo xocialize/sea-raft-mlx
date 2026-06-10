@@ -183,7 +183,9 @@ class CorrBlock:
             corr = (a @ b.transpose(0, 2, 1)) * scale          # [N, h1w1, h2w2]
             corr = corr.reshape(N * h1 * w1, h2, w2, 1)        # NHWC for sampling
             self.corr_pyramid.append(corr)
-            f2 = interpolate_bilinear(f2, 0.5, align_corners=False)
+            if len(self.corr_pyramid) < self.num_levels:  # the reference computes one wasted
+                f2 = interpolate_bilinear(f2, 0.5, align_corners=False)  # extra downsample
+
         self.h1, self.w1, self.batch = h1, w1, N
 
     def __call__(self, coords: mx.array) -> mx.array:
