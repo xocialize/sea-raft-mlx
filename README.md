@@ -35,11 +35,18 @@ out = model(img1, img2)        # [N, H, W, 3] in 0..255 -> {'final': [N, H, W, 2
 
 ## Weights
 
-Original checkpoints: [`MemorySlices/*`](https://huggingface.co/MemorySlices) (the first author's
-uploads, `bsd-3-clause`-tagged; e.g. `Tartan480x640-S` — TartanAir-only, the provenance-cleanest
-stage). Converted MLX weights will be published to `mlx-community` once
-[princeton-vl/SEA-RAFT#31](https://github.com/princeton-vl/SEA-RAFT/issues/31) (explicit
-checkpoint-license confirmation) is answered.
+Converted MLX weights (NHWC fp32, parity-verified) are published at:
+
+- [`mlx-community/SEA-RAFT-Tartan480x640-S-mlx`](https://huggingface.co/mlx-community/SEA-RAFT-Tartan480x640-S-mlx)
+  — TartanAir-stage (CC-BY training data; the cleanest provenance chain).
+- [`mlx-community/SEA-RAFT-Tartan-C-T-TSKH-spring540x960-S-mlx`](https://huggingface.co/mlx-community/SEA-RAFT-Tartan-C-T-TSKH-spring540x960-S-mlx)
+  — full training schedule (best accuracy; later stages use research-restricted datasets,
+  documented on the card).
+
+Originals: [`MemorySlices/*`](https://huggingface.co/MemorySlices) (the first author's uploads,
+`bsd-3-clause`-tagged). Per-checkpoint license confirmation is pending at
+[princeton-vl/SEA-RAFT#31](https://github.com/princeton-vl/SEA-RAFT/issues/31) — linked from the
+model cards as the provenance record.
 
 ## License
 
