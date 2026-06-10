@@ -44,9 +44,10 @@ Converted MLX weights (NHWC fp32, parity-verified) are published at:
   documented on the card).
 
 Originals: [`MemorySlices/*`](https://huggingface.co/MemorySlices) (the first author's uploads,
-`bsd-3-clause`-tagged). Per-checkpoint license confirmation is pending at
-[princeton-vl/SEA-RAFT#31](https://github.com/princeton-vl/SEA-RAFT/issues/31) — linked from the
-model cards as the provenance record.
+`bsd-3-clause`-tagged). Per-checkpoint license **confirmed by the authors** in
+[princeton-vl/SEA-RAFT#31](https://github.com/princeton-vl/SEA-RAFT/issues/31#issuecomment-4674222973)
+("we intend the BSD-3-Clause license to cover the checkpoints as well") — linked from the model
+cards as the provenance record.
 
 ## License
 
