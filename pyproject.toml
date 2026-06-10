@@ -1,0 +1,9 @@
+[project]
+name = "sea-raft-mlx"
+version = "0.1.0"
+description = "Apple MLX port of SEA-RAFT (ECCV 2024) optical flow — parity-locked vs the PyTorch reference"
+requires-python = ">=3.10"
+dependencies = ["mlx>=0.31", "numpy"]
+
+[project.optional-dependencies]
+parity = ["torch", "torchvision", "safetensors", "scipy"]
